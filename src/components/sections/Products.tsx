@@ -10,12 +10,12 @@ import Animate from '@/components/ui/Animate';
 function ProductCard({
   product,
   svg,
-  bgGradient,
+  bgStyle,
   delay,
 }: {
   product: { name: string; description: string; features: readonly string[] };
   svg: React.ReactNode;
-  bgGradient: string;
+  bgStyle: React.CSSProperties;
   delay: number;
 }) {
   return (
@@ -23,8 +23,11 @@ function ProductCard({
       <div className="group">
         <div className="relative overflow-hidden rounded-sm">
           {/* SVG Visual area */}
-          <div className={`${bgGradient} p-12 flex items-center justify-center relative overflow-hidden`}>
-            <div className="relative z-10 w-32 h-36">{svg}</div>
+          <div
+            className="p-12 sm:p-16 flex items-center justify-center relative overflow-hidden min-h-[280px]"
+            style={bgStyle}
+          >
+            <div className="relative z-10 w-44 h-48 sm:w-52 sm:h-56">{svg}</div>
             {/* Corner accents */}
             <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-white/20" />
             <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-white/20" />
@@ -80,13 +83,17 @@ export default function Products() {
           <ProductCard
             product={t.products.cherry}
             svg={<CherrySVG className="w-full h-full" />}
-            bgGradient="bg-gradient-to-br from-red-900 via-red-800 to-stone-800"
+            bgStyle={{
+              background: 'radial-gradient(ellipse at 30% 40%, #2a0a0a 0%, #150808 35%, #0c0a09 70%, #080706 100%)',
+            }}
             delay={100}
           />
           <ProductCard
             product={t.products.prune}
             svg={<PruneSVG className="w-full h-full" />}
-            bgGradient="bg-gradient-to-br from-stone-800 via-stone-700 to-amber-900"
+            bgStyle={{
+              background: 'radial-gradient(ellipse at 40% 35%, #1e1030 0%, #150d20 35%, #0d0b0f 70%, #080706 100%)',
+            }}
             delay={200}
           />
         </div>
