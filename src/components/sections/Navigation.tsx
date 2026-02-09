@@ -54,18 +54,18 @@ export default function Navigation() {
         style={{ transitionProperty: 'transform, background-color, box-shadow, backdrop-filter' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-20 sm:h-24 lg:h-28">
             {/* Logo */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="flex items-center gap-3 transition-all duration-300 hover:opacity-80"
             >
-              <div className="relative h-10 lg:h-12 w-auto">
+              <div className="relative h-14 sm:h-16 lg:h-20 w-auto">
                 <Image
                   src={isScrolled ? '/logo.png' : '/logo_sin_fondo.png'}
                   alt="Grupo La Consentida"
-                  width={180}
-                  height={48}
+                  width={240}
+                  height={80}
                   priority
                   className="h-full w-auto object-contain"
                 />

@@ -12,13 +12,13 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Tagline */}
           <div className="text-center md:text-left">
-            <div className="mb-3">
+            <div className="mb-4">
               <Image
                 src="/logo_blanco.png"
                 alt="Grupo La Consentida"
-                width={200}
-                height={60}
-                className="h-12 w-auto object-contain mx-auto md:mx-0"
+                width={280}
+                height={84}
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain mx-auto md:mx-0"
               />
             </div>
             <p className="text-sm text-stone-500">{t.footer.tagline}</p>
