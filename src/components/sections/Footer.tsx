@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
@@ -11,9 +12,15 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Tagline */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-serif font-bold text-white mb-2">
-              Grupo La Consentida
-            </h3>
+            <div className="mb-3">
+              <Image
+                src="/logo_blanco.png"
+                alt="Grupo La Consentida"
+                width={200}
+                height={60}
+                className="h-12 w-auto object-contain mx-auto md:mx-0"
+              />
+            </div>
             <p className="text-sm text-stone-500">{t.footer.tagline}</p>
           </div>
 

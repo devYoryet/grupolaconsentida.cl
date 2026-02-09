@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageToggle from '@/components/ui/LanguageToggle';
 
@@ -55,14 +56,20 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-3">
-              <span
-                className={`text-lg lg:text-xl font-serif font-bold tracking-tight transition-colors duration-300 ${
-                  isScrolled ? 'text-green-900' : 'text-white'
-                }`}
-              >
-                La Consentida
-              </span>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center gap-3 transition-all duration-300 hover:opacity-80"
+            >
+              <div className="relative h-10 lg:h-12 w-auto">
+                <Image
+                  src={isScrolled ? '/logo.png' : '/logo_sin_fondo.png'}
+                  alt="Grupo La Consentida"
+                  width={180}
+                  height={48}
+                  priority
+                  className="h-full w-auto object-contain"
+                />
+              </div>
             </button>
 
             {/* Desktop Nav */}
